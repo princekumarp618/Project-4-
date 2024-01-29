@@ -1,0 +1,322 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: brolink;
+    src: url(Brolink.otf);
+}
+@font-face {
+    font-family: hyperhelix;
+    src: url(hyper-helix.otf);
+}
+@font-face {
+    font-family: bruno;
+    src: url(BrunoAceSC-Regular.ttf);
+}
+@font-face {
+    font-family: changa;
+    src: url(Changa-Bold.ttf);
+}
+ body, html{
+    background-color: #DCF6F3;
+    /* width:100%; */
+    /* height: 100%; */
+}/*
+*{
+    margin: 0;
+    padding: 0;
+} */
+.navbar{
+font-family:brolink;
+font-size: small;
+padding: 20px;
+display: flex;
+
+
+align-items: center;
+justify-content: space-between;
+}
+li:hover{
+    border-radius: 5px;;
+    padding: 10px;
+    background-color: #00326028;
+}
+a:active li{
+    background-color: #00326058;
+}
+.navbar-list{
+color: #003260;
+text-align: center;
+padding: 10px;
+padding-right: 0px;
+width: 60%; 
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+list-style-type: none;
+align-items: center;
+justify-content: space-evenly;
+letter-spacing: 2px;
+}
+.navbar-list li{
+text-align: center;
+text-align: center;
+}
+.link-list{
+    color:#0a212e;
+}
+#login:hover{
+background-color: aqua;
+}
+.navbar-list a {
+text-decoration: none;
+text-align: center;
+padding:10px;
+padding-top: 10px;
+border-radius: 5px;
+width: 130px;
+height: 20px;
+padding-top: 18px;
+}
+.navbar-list #login{
+background-color: #003260;
+color: white;
+}
+.navbar-list #signin{
+background-color: #33918C;
+color: white;
+}
+.logo-bg{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -0.5;
+    width: 450px;
+}
+#logo{
+    width: 200px;
+    padding-left: 65px;
+    z-index: 1;
+}
+.plane-image{
+    position: absolute;
+    right: 0;
+    width: 55%;
+    bottom: 0;
+    transition: transform ease-in-out 1s;
+    filter: drop-shadow(0px, 0px, 10px rgba(0,0,0,0.5));
+}
+.hero-content{
+    color: #003260;
+    font-family: brolink;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    flex-direction: column;
+    padding: 20px;
+    width: 590px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%) ;
+    margin-left: 60px;
+    /* height: 300px; */
+}
+.hero-content h1{
+    MARGIN-TOP: 50PX;
+    font-size: 90px;
+    font-weight: lighter;
+    letter-spacing: 5px;
+    line-height: 0.3;
+}
+.hero-content h3{
+
+    color: #33918C;
+    font-size: 60px;
+    font-weight: lighter;
+    letter-spacing: 5px;
+
+}
+.hero-content span{
+    color: #003260;
+    font-family: changa;
+    font-size: 66px;
+    font-weight: lighter;
+}
+#questionmark{
+    font-family: brolink;
+}
+.hero-content p{
+    font-family: hyperhelix;
+    letter-spacing: 2px;
+    font-size: medium;
+}
+.hero-content a{
+    margin-top: 30px;
+    font-size: large;
+    font-family: changa;
+    background-color: #33918C;
+    color:#DCF6F3;
+    padding: 13px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: fit-content;
+    text-decoration: none;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: 3px solid #DCF6F3;
+}
+#book:hover{
+    padding-left:27px ;
+    padding-right: 27px;
+    border: 3px solid #1e5653;
+}
+#book:active{
+    background-color: #1e5653;
+    padding-left:25px ;
+    padding-right: 25px;
+}
+.footer-home{
+    font-weight: 100px;
+    font-size: large;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003260;
+    background-color: #DCF6F3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-list{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+    width: 70%;
+    font-size: 15px;
+    margin: 0px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    list-style-type: none;
+    border-bottom: 1px solid #0a212e;
+    padding-bottom: 50px;
+    justify-content: space-between;
+}
+.footer-div{
+    text-decoration: none;
+    padding: 10px;
+    font-size: 10px;
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* help button */
+
+        .btn-help{
+            margin-bottom: 20px;
+            position: absolute;
+            left: 6%;
+            top: 80%;
+            width: 60px;
+            height: 60px;
+            background: #33918C;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.7s ease-in-out;
+        }
+        .btn-help:hover{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            background: #003260;
+            border-radius: 15px;
+            width: 250px;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        .btn-help i{
+            position: absolute;
+        }
+        .btn-help:hover i{
+            opacity: 0;
+        }
+        .btn-help i{
+            font-size: 30px;
+            color: #000;
+        } 
+        .text-section{
+            opacity: 0;
+            padding: 20px;
+
+        }
+        .btn-help:hover .text-section{
+            animation: forwards fadeIn 0.7s 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        #faq{
+            border: 1px solid white;
+            color:#c3fffc;
+            background-color:rgb(0, 123, 151);
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            text-decoration: none ;
+        }
+        p{
+            margin-bottom: 25px;
+        }
+        #icon{
+            color: azure;
+        }
+        #login:hover{
+            color: white;
+            background-color: #33918C;
+        }
+        #signin:hover{
+            color: white;
+            background-color:#003260;
+        }
+        #login, #signin{
+            transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        #signin:active{
+            background-color: #00fff731;
+        }
+        .faq{
+            padding-top:30px ;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+            margin-top: 35px;
+            color:#DCF6F3;
+        }
+        .faq-head{
+            font-family: changa;
+            letter-spacing: 3px;
+            font-size: 40px;
+            padding: 5px;
+            color: #DCF6F3;
+        }
+        li:hover{
+            border-radius: 5px;;
+            padding: 10px;
+            background-color: #00326028;
+            transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }

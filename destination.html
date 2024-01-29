@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Flights</title>
+    <link rel="stylesheet" href="transition.css">
+    <style>
+        @font-face {
+            font-family: brolink;
+            src: url(Brolink.otf);
+        }
+
+        @font-face {
+            font-family: hyperhelix;
+            src: url(hyper-helix.otf);
+        }
+
+        @font-face {
+            font-family: bruno;
+            src: url(BrunoAceSC-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: changa;
+            src: url(Changa-Bold.ttf);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('sunset.jpg') center/cover fixed no-repeat;
+            color: #333;
+            height: 100vh;
+            
+        }
+        .navbar {
+            font-family: brolink;
+            font-size: small;
+            padding: 20px;
+            display: flex;
+            background: linear-gradient(rgb(2, 0, 97),rgb(0, 115, 181));
+            padding-bottom: 30px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-list li:hover {
+            border-radius: 5px;
+            ;
+            padding: 13px;
+            background-color: #003260ba;
+        }
+
+        a:active li {
+            background-color: #00326058;
+        }
+
+        .navbar-list {
+            color: #003260;
+            text-align: center;
+            padding: 10px;
+            padding-right: 0px;
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style-type: none;
+            align-items: center;
+            justify-content: space-evenly;
+            letter-spacing: 2px;
+        }
+
+        .navbar-list li {
+            text-align: center;
+            text-align: center;
+        }
+
+        .link-list {
+            color: #0a212e;
+        }
+
+        #login:hover {
+            background-color: aqua;
+        }
+
+        .navbar-list a {
+            text-decoration: none;
+            text-align: center;
+            padding: 10px;
+            padding-top: 10px;
+            border-radius: 5px;
+            width: 130px;
+            height: 20px;
+            padding-top: 18px;
+        }
+
+        .navbar-list #login {
+            background-color: #003260;
+            color: white;
+        }
+
+        .navbar-list #signin {
+            background-color: #33918C;
+            color: white;
+        }
+
+        .logo-bg {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -0.5;
+            width: 450px;
+        }
+
+        #logo {
+            width: 200px;
+            padding-left: 65px;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            -webkit-backdrop-filter: blur(30px);
+            width: 300px;
+            margin: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .footer-home {
+            font-weight: 100px;
+            font-size: large;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #befff5;
+            background: linear-gradient(rgba(9, 52, 48, 0.74), rgba(0, 23, 51, 0.632));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            -webkit-backdrop-filter: blur(50px);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-list {
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            width: 70%;
+            font-size: 15px;
+            margin: 0px;
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            list-style-type: none;
+            border-bottom: 1px solid #befff5;
+            padding-bottom: 50px;
+            justify-content: space-between;
+        }
+
+        .footer-div {
+            text-decoration: none;
+            padding: 10px;
+            font-size: 10px;
+            width: 55%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbarlist li:hover {
+            border-radius: 5px;
+            ;
+            padding: 10px;
+            background-color: #0084ff;
+            transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        #login:hover {
+            color: white;
+            background-color: #33918C;
+        }
+
+        #signin:hover {
+            color: white;
+            background-color: #003260;
+        }
+
+        #login,
+        #signin {
+            transition: background-color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        #signin:active {
+            background-color: #00fff731;
+        }
+        #heading{
+            text-align: center;
+            background-color: #33918C;
+            border-radius: 5px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding: 30px;
+        }
+        .link-list{
+            color: white;
+        }
+        .navbar2{
+            list-style-type: none;
+            padding: 20px;
+            background: linear-gradient(rgb(0, 62, 62), rgb(0, 17, 25));
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-bottom: 50px;;
+        }
+        #select-tag{
+            background-color: #02509a;
+            padding: 4px;
+            border: 1px solid white;
+            color: white;
+            width: 200px;
+            height: 40px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        .select-tag select { 
+        /* for Firefox */ 
+        -moz-appearance: none; 
+        /* for Safari, Chrome, Opera */ 
+        -webkit-appearance: none; 
+      } 
+      .select-tag select::-ms-expand { 
+        display: none; 
+      } 
+        h1{
+            animation: slide-down 0.3s;
+        }
+        label{
+            font-weight: bold;
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 50px;
+        }
+        #dropdown{
+            height: 200px;
+        }
+        .card-container a{
+            background-color:#15486593;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .card-container a:hover{
+            background-color:#154865;
+            padding: 8px;
+        }
+        .card-container{
+            margin-bottom: 50px;
+            background-color: #0032609a;
+            padding: 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(50px);
+        }
+        @keyframes slide-down {
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="logo-bg.png" alt="" class="logo-bg">
+        <img src="SkyNET.png" alt="SkyNET" id="logo">
+        <ul class="navbar-list">
+            <li><a href="search.html" class="link-list">SEARCH</a></li>
+            <li><a href="contact.html" class="link-list">CONTACT</a></li>
+            <li><a href="deals2.html"class="link-list">DEALS</a></li>
+            <li><a href="index.html"class="link-list">HOME</a></li>
+            <a href="login.html" id="login">LOGIN</a>
+            <a href="signin.html" id="signin">SIGN-IN</a>
+        </ul>
+    </nav>
+    <h1 id="heading">AVAILABLE FLIGHTS FOR SEARCHED ROUTE</h1>
+    <div class="navbar2">
+        <li>
+
+            <select name="class" id="select-tag">
+              <option  id= "dropdown"value="select">Select</option>
+              <option id= "dropdown"value="economy">Economy</option>
+              <option id= "dropdown"value="business">Business</option>
+            </select></li>
+        <li> 
+           
+            <select name="citizen" id="select-tag">
+            <option id= "dropdown"value="Select">Select</option>
+            <option id= "dropdown"value="student">student</option>
+            <option id= "dropdown"value="Senior Citizen">Senior Citizen</option>
+            <option id= "dropdown"value="armed forces">Armed Forces</option>
+            <option id= "dropdown"value="Family">Family</option>
+          </select></li>
+    </div>
+
+    <div class="card-container">
+        <!-- Flight data will go here -->
+        <div class="card">
+            <div class="card-header">FL123</div>
+            <div class="card-body">
+                <p>Departure Airport: Departure Airport 1</p>
+                <p>Arrival Airport: Arrival Airport 1</p>
+                <p>Date: 2024-01-08</p>
+                <p>Time: 12:00 PM</p>
+                <a href="checkout.html">BOOK</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">FL456</div>
+            <div class="card-body">
+                <p>Departure Airport: Departure Airport 2</p>
+                <p>Arrival Airport: Arrival Airport 2</p>
+                <p>Date: 2024-01-08</p>
+                <p>Time: 03:30 PM</p>
+                <a href="checkout.html">BOOK</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">FL456</div>
+            <div class="card-body">
+                <p>Departure Airport: Departure Airport 2</p>
+                <p>Arrival Airport: Arrival Airport 2</p>
+                <p>Date: 2024-01-08</p>
+                <p>Time: 03:30 PM</p>
+                <a href="checkout.html">BOOK</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">FL456</div>
+            <div class="card-body">
+                <p>Departure Airport: Departure Airport 2</p>
+                <p>Arrival Airport: Arrival Airport 2</p>
+                <p>Date: 2024-01-08</p>
+                <p>Time: 03:30 PM</p>
+                <a href="checkout.html">BOOK</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">FL456</div>
+            <div class="card-body">
+                <p>Departure Airport: Departure Airport 2</p>
+                <p>Arrival Airport: Arrival Airport 2</p>
+                <p>Date: 2024-01-08</p>
+                <p>Time: 03:30 PM</p>
+                <a href="checkout.html">BOOK</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">FL456</div>
+            <div class="card-body">
+                <p>Departure Airport: Departure Airport 2</p>
+                <p>Arrival Airport: Arrival Airport 2</p>
+                <p>Date: 2024-01-08</p>
+                <p>Time: 03:30 PM</p>
+                <a href="checkout.html">BOOK</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">FL456</div>
+            <div class="card-body">
+                <p>Departure Airport: Departure Airport 2</p>
+                <p>Arrival Airport: Arrival Airport 2</p>
+                <p>Date: 2024-01-08</p>
+                <p>Time: 03:30 PM</p>
+                <a href="checkout.html">BOOK</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">FL456</div>
+            <div class="card-body">
+                <p>Departure Airport: Departure Airport 2</p>
+                <p>Arrival Airport: Arrival Airport 2</p>
+                <p>Date: 2024-01-08</p>
+                <p>Time: 03:30 PM</p>
+                <a href="checkout.html">BOOK</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-home">
+        <h3 id="footerlogo"><b>SkyNET</b></h3>
+        <ul class="footer-list">
+            <li>Book Now</li>
+            <li>Special offers</li>
+            <li>Destinations</li>
+            <li>Customer Support</li>
+            <li>About Us</li>
+        </ul>
+        <div class="footer-div">
+            <p>© 2023 SkyNET. All rights reserved.</p>
+            <p style="text-decoration: underline;">Privacy Policy</p>
+        </div>
+    </footer>
+</body>
+
+</html>
